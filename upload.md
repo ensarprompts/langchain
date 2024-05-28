@@ -2,22 +2,26 @@ Here are prompts for creating an API to deal with file uploads via a runnable:
 
 1. **Prompt for the purpose and scope of the code:**
    ```
-   Write a Python script using FastAPI that handles file uploads, processes the files to determine their MIME types, and ingests the files into a vector store. The script should assume the content is a base64 encoded string and should use the LangChain library for processing and vector store integration.
+   Write a Python script using FastAPI that handles file uploads, processes the files to determine their MIME types, and ingests the files into a vector store. 
+   The script should assume the content is a base64 encoded string and should use the LangChain library for processing and vector store integration.
    ```
 
 2. **Prompt for importing necessary libraries and modules:**
    ```
-   Import the necessary libraries and modules to handle file uploads using FastAPI, process files using LangChain, and integrate with vector stores. Include `mimetypes`, `os`, `typing`, `UploadFile` from FastAPI, `PGVector`, `Blob`, `ConfigurableField`, `RunnableConfig`, `RunnableSerializable`, `VectorStore` from LangChain, `AzureOpenAIEmbeddings`, `OpenAIEmbeddings`, and `RecursiveCharacterTextSplitter`.
+   Import the necessary libraries and modules to handle file uploads using FastAPI, process files using LangChain, and integrate with vector stores. 
+   Include `mimetypes`, `os`, `typing`, `UploadFile` from FastAPI, `PGVector`, `Blob`, `ConfigurableField`, `RunnableConfig`, `RunnableSerializable`, `VectorStore` from LangChain, `AzureOpenAIEmbeddings`, `OpenAIEmbeddings`, and `RecursiveCharacterTextSplitter`.
    ```
 
 3. **Prompt for defining a function to guess the MIME type of a file:**
    ```
-   Define a function `_guess_mimetype` that takes a file name and file bytes as input and returns the MIME type of the file. The function should use the `mimetypes` library and perform signature-based detection for common file types.
+   Define a function `_guess_mimetype` that takes a file name and file bytes as input and returns the MIME type of the file. 
+   The function should use the `mimetypes` library and perform signature-based detection for common file types.
    ```
 
 4. **Prompt for defining a function to convert file uploads to blobs:**
    ```
-   Define a function `convert_ingestion_input_to_blob` that takes an `UploadFile` object from FastAPI as input and returns a `Blob` object. The function should read the file data, determine its MIME type using `_guess_mimetype`, and create a `Blob` using the `Blob.from_data` method.
+   Define a function `convert_ingestion_input_to_blob` that takes an `UploadFile` object from FastAPI as input and returns a `Blob` object. 
+   The function should read the file data, determine its MIME type using `_guess_mimetype`, and create a `Blob` using the `Blob.from_data` method.
    ```
 
 5. **Prompt for determining whether to use Azure or OpenAI embeddings:**
